@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!--无参构造 默认的-->
+    <!--<bean id="user" class="com.yang.pojo.User">
+        &lt;!&ndash;<property name="name" value="样子"/>&ndash;&gt;
+    </bean>-->
+    <!--有参构造 第一种下标赋值-->
+    <!--<bean id="user" class="com.yang.pojo.User">
+        &lt;!&ndash;<property name="name" value="样子"/>&ndash;&gt;
+        <constructor-arg index="0" value="样子"/>
+    </bean>-->
+
+    <!--第二种：通过类型创建 不建议-->
+    <!--<bean id="user" class="com.yang.pojo.User">
+        <constructor-arg type="java.lang.String" value="样样"/>
+    </bean>-->
+    <!--第三种 通过参数名 建议！-->
+    <bean id="user" class="com.yang.pojo.User">
+        <constructor-arg name="name" value="羊羊羊"/>
+    </bean>
+    <!--别名-->
+    <alias name="user" alias="userNew"/>
+
+    <bean id="userT" class="com.yang.pojo.UserT" name="user2 12">
+        <property name="name" value="羊羊羊"/>
+    </bean>
+</beans>
